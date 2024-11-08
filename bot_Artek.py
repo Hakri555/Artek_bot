@@ -1,9 +1,6 @@
 import telebot
 import Token
 
-# Здесь необходимо вставить ваш токен, полученный у @BotFather
-
-ADMIN_USER_ID = '5846044156'  # Замените на ID пользователя, куда будет отправляться медиа
 bot = telebot.TeleBot(Token.TOKEN)
 
 
@@ -19,7 +16,7 @@ def start_message(message):
 @bot.message_handler(content_types=['photo'])
 def handle_photo(message):
     # Получаем фото и отправляем его администратору
-    bot.forward_message(ADMIN_USER_ID, message.chat.id, message.message_id)
+    bot.forward_message(Token.ADMIN_USER_ID, message.chat.id, message.message_id)
     bot.send_message(message.chat.id, "Спасибо за фото и участие в жизни класса!")
 
 
@@ -27,7 +24,7 @@ def handle_photo(message):
 @bot.message_handler(content_types=['video'])
 def handle_video(message):
     # Получаем видео и отправляем его администратору
-    bot.forward_message(ADMIN_USER_ID, message.chat.id, message.message_id)
+    bot.forward_message(Token.ADMIN_USER_ID, message.chat.id, message.message_id)
     bot.send_message(message.chat.id, "Спасибо за видео и участие в жизни класса!")
 
 
@@ -35,7 +32,7 @@ def handle_video(message):
 @bot.message_handler(content_types=['document'])
 def handle_document(message):
     # Получаем файл и отправляем его администратору
-    bot.forward_message(ADMIN_USER_ID, message.chat.id, message.message_id)
+    bot.forward_message(Token.ADMIN_USER_ID, message.chat.id, message.message_id)
     bot.send_message(message.chat.id, "Спасибо за файл и участие в жизни класса!")
 
 

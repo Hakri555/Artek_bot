@@ -1,9 +1,10 @@
 import telebot
+import Token
 
 # Здесь необходимо вставить ваш токен, полученный у @BotFather
-API_TOKEN = '8114519698:AAGpfZv0ecrucZGi3DLgr-1Ftb_RaWhZTSc'
+
 ADMIN_USER_ID = '5846044156'  # Замените на ID пользователя, куда будет отправляться медиа
-bot = telebot.TeleBot(API_TOKEN)
+bot = telebot.TeleBot(Token.TOKEN)
 
 
 @bot.message_handler(commands=["start"])
